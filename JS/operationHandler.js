@@ -11,6 +11,7 @@ function calculateFinita(){
     }
     if(x && h && origen){
     let resultado = convolucionDiscreta(x,h,origen);
+    redondear(resultado);
     imprimirResultado(x,h,origen,resultado);
     document.getElementById("errorFinita").innerText = "";
     cambiarTab("tabConvInfinita", "tab1");
@@ -31,6 +32,7 @@ function calculatePeriodica(){
     }
     if(x && h && origen && periodo){
     let resultado = convolucionPeriodica(x,h,origen,periodo);
+    redondear(resultado);
     imprimirResultado(x,h,origen,resultado);
     document.getElementById("errorPeriodica").innerText = "";
     cambiarTab("tabConvPeriodica", "tab2");
@@ -53,6 +55,7 @@ function calculateCircular(){
     }
     if(x && h && origen && periodos){
     let resultado = convolucionCircular(x,h,origen,periodos);
+    redondear(resultado);
     imprimirResultado(x,h,origen,resultado);
     document.getElementById("errorCircular").innerText = "";
     cambiarTab("tabConvCircular", "tab3");
@@ -74,4 +77,10 @@ function cambiarTab(tabActual, noTab) {
     document.getElementById(tabActual).className = "mdl-layout__tab-panel";
     document.getElementById("tab4").className = "mdl-layout__tab is-active";
     document.getElementById("tabGraficas").className = "mdl-layout__tab-panel is-active";
+}
+
+function redondear(resultado){
+    for (let i = 0; i < resultado.vector.length; i++) {
+        resultado.vector[i] = resultado.vector[i].toFixed(2);
+    }
 }
