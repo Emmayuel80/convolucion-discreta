@@ -1,13 +1,4 @@
-//Importaciones
-const convolucionDiscreta = require('./convolucionDiscreta');
-//Variables preasignadas
-const x = [3,6,2];
-const h = [-1,4];
-const origen = [0,0];   //Indices indicando cuales son los origenes en cada funcion
-const periodos = [2,3];
 
-//=================================================
-convolucionCircular(x,h,origen,periodos);
 //======Funcion que calcula todo===================
 function convolucionCircular(x,h,origen,periodos){
     const resultado = convolucionDiscreta(x,h,origen);

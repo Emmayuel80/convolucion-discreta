@@ -6,7 +6,7 @@
 // console.table(convolucionDiscreta(x,h,origen)); //Prueba
 //=================================================
 //======Funcion que calcula todo===================
-module.exports = function convolucionDiscreta(x,h,origen){
+function convolucionDiscreta(x,h,origen){
     let multiplicacion = multiplicacionInversa(x,h);
     let resultado = {
         "vector": calcularVector(multiplicacion),

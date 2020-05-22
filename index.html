@@ -8,6 +8,14 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
     <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <script src="./JS/convolucionDiscreta.js"></script>
+    <script src="./JS/convolucionPeriodica.js"></script>
+    <script src="./JS/convolucionCircular.js"></script>
+    <script src="./JS/graficarSeg.js"></script>
+    <script src="https://www.geogebra.org/apps/deployggb.js"></script>
+    <script src="./JS/initateGeogebra.js"></script>
+    <script src="https://unpkg.com/mathjs@7.0.0/dist/math.min.js"></script>
+    <script src="./JS/operationHandler.js"></script>
 </head>
 
 <body>
@@ -74,7 +82,7 @@ mdl-layout--fixed-tabs">
                         </div>
                         <!-- Accent-colored raised button -->
                         <button id="btnConvFinita"
-                            class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
+                            class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" onclick="calculateFinita()">
                             Continuar
                         </button>
                     </div>
@@ -110,6 +118,15 @@ mdl-layout--fixed-tabs">
                         </div>
                     </div>
                     <div id="divCentrado" style="text-align: center;">
+                        <h5>Indique desde que "n" comienza la secuencia x(n)</h5>
+
+                        <div class="mdl-textfield mdl-js-textfield">
+                            <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?"
+                                id="indiceXnPeriodica">
+                            <label class="mdl-textfield__label" for="indiceXnPeriodica">Number...</label>
+                            <span class="mdl-textfield__error">Input is not a number!</span>
+                        </div>
+                        <br>
                         <h5>Indique desde que "n" comienza la secuencia h(n)</h5>
 
                         <div class="mdl-textfield mdl-js-textfield">
@@ -119,6 +136,13 @@ mdl-layout--fixed-tabs">
                             <span class="mdl-textfield__error">Input is not a number!</span>
                         </div>
                         <br>
+                        <h5>Periodo de h(n)</h5>
+                                <div class="mdl-textfield mdl-js-textfield">
+                                    <input class="mdl-textfield__input" type="text" id="periodoHnPeriodica">
+                                    <label class="mdl-textfield__label" for="periodoHnPeriodica">Peri&oacute;do de
+                                        h(n)</label>
+                                </div>
+                                <br>
                         <!-- Accent-colored raised button -->
                         <button id="btnConvPeriodica" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
                             Continuar
@@ -200,7 +224,13 @@ mdl-layout--fixed-tabs">
             </section>
             <section class="mdl-layout__tab-panel" id="tabGraficas">
                 <div class="page-content">
-                    <!-- Your content goes here -->
+                    <div id="resultado"></div>
+                    <h5>x(n)</h5>
+                    <div id="xnGraph"></div>
+                    <h5>h(n)</h5>
+                    <div id="hnGraph"></div> 
+                    <h5>y(n)</h5>
+                    <div id="ynGraph"></div>  
                 </div>
             </section>
         </main>
