@@ -14,7 +14,7 @@ function cleanApplet(applet){
     let names=new Array(); 
 
     for(i=0;i<length;i++){ 
-        names = applet.getObjectName(i); 
+        names.push(applet.getObjectName(i)); 
     } 
 
     for(i=0;i<length;i++){ 
