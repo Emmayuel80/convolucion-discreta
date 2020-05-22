@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pr&aacute;ctica 2</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+</head>
+
+<body>
+    <!-- Always shows a header, even in smaller screens. -->
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+        <header class="mdl-layout__header">
+            <div class="mdl-layout__header-row">
+                <!-- Title -->
+                <span class="mdl-layout-title">Pr&aacute;ctica 2: Convoluci&oacute;n discreta</span>
+                <!-- Add spacer, to align navigation to the right -->
+                <div class="mdl-layout-spacer"></div>
+                <!-- Navigation. We hide it in small screens. -->
+            </div>
+        </header>
+        <main class="mdl-layout__content">
+            <div class="page-content">
+                <div class="mdl-grid">
+                    <div class="mdl-cell mdl-cell--6-col">
+                        <div style="text-align: center;" id="datosXn">
+                            <h5>Inserte x(n)</h5>
+                            <!-- Floating Multiline Textfield -->
+                            <form action="#">
+                                <div class="mdl-textfield mdl-js-textfield">
+                                    <textarea class="mdl-textfield__input" type="text" rows="3" id="sample5"></textarea>
+                                    <label class="mdl-textfield__label" for="sample5">Text lines...</label>
+                                </div>
+                            </form>
+
+                            <h5>Indique desde que "n" comienza la secuencia x(n)</h5>
+                            <form action="#">
+                                <div class="mdl-textfield mdl-js-textfield">
+                                    <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?"
+                                        id="sample2">
+                                    <label class="mdl-textfield__label" for="sample2">Number...</label>
+                                    <span class="mdl-textfield__error">Input is not a number!</span>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="mdl-cell mdl-cell--6-col">
+                        <div style="text-align: center;" id="datosHn">
+                            <h5>Inserte h(n)</h5>
+                            <!-- Floating Multiline Textfield -->
+                            <form action="#">
+                                <div class="mdl-textfield mdl-js-textfield">
+                                    <textarea class="mdl-textfield__input" type="text" rows="3" id="sample5"></textarea>
+                                    <label class="mdl-textfield__label" for="sample5">Text lines...</label>
+                                </div>
+                            </form>
+
+                            <h5>Indique desde que "n" comienza la secuencia h(n)</h5>
+                            <form action="#">
+                                <div class="mdl-textfield mdl-js-textfield">
+                                    <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?"
+                                        id="sample2">
+                                    <label class="mdl-textfield__label" for="sample2">Number...</label>
+                                    <span class="mdl-textfield__error">Input is not a number!</span>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div id="divBoton" style="text-align: center;">
+                    <!-- Accent-colored raised button -->
+                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
+                        Continuar
+                    </button>
+                </div>
+
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>

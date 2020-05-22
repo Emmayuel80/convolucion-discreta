@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convoluci&oacute;n discreta</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+</head>
+
+<body>
+    <!-- Simple header with fixed tabs. -->
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header
+mdl-layout--fixed-tabs">
+        <header class="mdl-layout__header">
+            <div class="mdl-layout__header-row">
+                <!-- Title -->
+                <span class="mdl-layout-title">Resultados</span>
+            </div>
+            <!-- Tabs -->
+            <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
+                <a href="#fixed-tab-1" class="mdl-layout__tab is-active">Convoluci&oacute;n finita</a>
+                <a href="#fixed-tab-2" class="mdl-layout__tab">Convoluci&oacute;n peri&oacute;dica</a>
+                <a href="#fixed-tab-3" class="mdl-layout__tab">Convoluci&oacute;n circular</a>
+                <a href="#fixed-tab-4" class="mdl-layout__tab">Gr&aacute;fica</a>
+            </div>
+        </header>
+        
+        <main class="mdl-layout__content">
+            <section class="mdl-layout__tab-panel is-active" id="fixed-tab-1">
+                <div class="page-content">
+                    <div id="divBoton" style="text-align: center;">
+                        <br>
+                        <!-- Accent-colored raised button -->
+                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
+                            Continuar
+                        </button>
+                    </div>
+                </div>
+            </section>
+            <section class="mdl-layout__tab-panel" id="fixed-tab-2">
+                <div class="page-content">
+                    <!-- Your content goes here -->
+                    <div style="text-align: left; width: 600px; margin: auto;">
+                        <div class="mdl-grid">
+                            <div class="mdl-cell mdl-cell--6-col">
+                                <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-Xn">
+                                    <input type="checkbox" id="checkbox-Xn" class="mdl-checkbox__input">
+                                    <span class="mdl-checkbox__label">x(n) es peri&oacute;dica</span>
+                                </label>
+                            </div>
+                            <div class="mdl-cell mdl-cell--6-col">
+                                <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-Hn">
+                                    <input type="checkbox" id="checkbox-Hn" class="mdl-checkbox__input">
+                                    <span class="mdl-checkbox__label">h(n) es peri&oacute;dica</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="mdl-grid">
+                            <div class="mdl-cell mdl-cell--6-col">
+                                <!-- Simple Textfield -->
+                                <form action="#">
+                                    <div class="mdl-textfield mdl-js-textfield">
+                                        <input class="mdl-textfield__input" type="text" id="sample1">
+                                        <label class="mdl-textfield__label" for="sample1">Peri&oacute;do de x(n)</label>
+                                    </div>
+                                </form>
+
+                            </div>
+                            <div class="mdl-cell mdl-cell--6-col">
+                                <form action="#">
+                                    <div class="mdl-textfield mdl-js-textfield">
+                                        <input class="mdl-textfield__input" type="text" id="sample1">
+                                        <label class="mdl-textfield__label" for="sample1">Peri&oacute;do de h(n)</label>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div id="divBoton" style="text-align: center;">
+
+                            <!-- Accent-colored raised button -->
+                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
+                                Continuar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="mdl-layout__tab-panel" id="fixed-tab-3">
+                <div class="page-content">
+                    <!-- Your content goes here -->
+                    <div style="text-align: left; width: 600px; margin: auto;">
+                        <div class="mdl-grid">
+                            <div class="mdl-cell mdl-cell--6-col">
+                                <!-- Simple Textfield -->
+                                <form action="#">
+                                    <div class="mdl-textfield mdl-js-textfield">
+                                        <input class="mdl-textfield__input" type="text" id="sample1">
+                                        <label class="mdl-textfield__label" for="sample1">Peri&oacute;do de x(n)</label>
+                                    </div>
+                                </form>
+
+                            </div>
+                            <div class="mdl-cell mdl-cell--6-col">
+                                <form action="#">
+                                    <div class="mdl-textfield mdl-js-textfield">
+                                        <input class="mdl-textfield__input" type="text" id="sample1">
+                                        <label class="mdl-textfield__label" for="sample1">Peri&oacute;do de h(n)</label>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div id="divBoton" style="text-align: center;">
+
+                            <!-- Accent-colored raised button -->
+                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
+                                Continuar
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+            <section class="mdl-layout__tab-panel" id="fixed-tab-4">
+                <div class="page-content">
+                    <!-- Your content goes here -->
+                </div>
+            </section>
+        </main>
+    </div>
+
+</body>
+
+</html>
