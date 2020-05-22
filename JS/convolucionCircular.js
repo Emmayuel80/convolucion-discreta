@@ -23,7 +23,7 @@ function convolucionCircular(x,h,origen,periodos){
             result[g] += splitResults[i][g];
         }
     }
-    let finalArray = [0,0,0];
+    let finalArray = [0,0,0,0,0];
     resultado.vector = finalArray.fill(result).flat();
     resultado.origen = resultado.vector[resultado.origenIndex];
     console.table(resultado)
