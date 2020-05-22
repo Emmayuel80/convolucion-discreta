@@ -29,10 +29,10 @@ mdl-layout--fixed-tabs">
             </div>
             <!-- Tabs -->
             <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
-                <a href="#tabConvInfinita" class="mdl-layout__tab is-active">Convoluci&oacute;n finita</a>
-                <a href="#tabConvPeriodica" class="mdl-layout__tab">Convoluci&oacute;n peri&oacute;dica</a>
-                <a href="#tabConvCircular" class="mdl-layout__tab">Convoluci&oacute;n circular</a>
-                <a href="#tabGraficas" class="mdl-layout__tab">Gr&aacute;fica</a>
+                <a href="#tabConvInfinita" id="tab1" class="mdl-layout__tab is-active">Convoluci&oacute;n finita</a>
+                <a href="#tabConvPeriodica" id="tab2" class="mdl-layout__tab">Convoluci&oacute;n peri&oacute;dica</a>
+                <a href="#tabConvCircular" id="tab3" class="mdl-layout__tab">Convoluci&oacute;n circular</a>
+                <a href="#tabGraficas" id="tab4" class="mdl-layout__tab">Gr&aacute;fica</a>
             </div>
         </header>
 
@@ -40,6 +40,7 @@ mdl-layout--fixed-tabs">
             <section class="mdl-layout__tab-panel is-active" id="tabConvInfinita">
                 <div class="page-content">
                     <div id="divContent" style="text-align: center;">
+                        <h5><div id="errorFinita" style="color: red;"></div></h5>
                         <div class="mdl-grid">
                             <div class="mdl-cell mdl-cell--6-col">
                                 <div style="text-align: center;" id="datosXnFinita">
@@ -91,6 +92,7 @@ mdl-layout--fixed-tabs">
             <section class="mdl-layout__tab-panel" id="tabConvPeriodica">
                 <div class="page-content">
                     <div class="mdl-grid">
+                        <h5 style="text-align: center;"><div id="errorPeriodica" style="color: red;"></div></h5>
                         <div class="mdl-cell mdl-cell--6-col">
                             <div style="text-align: center;" id="datosXnPeriodica">
                                 <h5>Inserte x(n)</h5>
@@ -144,7 +146,7 @@ mdl-layout--fixed-tabs">
                                 </div>
                                 <br>
                         <!-- Accent-colored raised button -->
-                        <button id="btnConvPeriodica" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
+                        <button id="btnConvPeriodica" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" onclick="calculatePeriodica()">
                             Continuar
                         </button>
                     </div>
@@ -153,6 +155,7 @@ mdl-layout--fixed-tabs">
             <section class="mdl-layout__tab-panel" id="tabConvCircular">
                 <div class="page-content">
                     <div class="mdl-grid">
+                        <h5 style="text-align: center;"><div id="errorCircular" style="color: red;"></div></h5>
                         <div class="mdl-cell mdl-cell--6-col">
                             <div style="text-align: center;" id="datosXnCircular">
                                 <h5>Inserte x(n)</h5>
@@ -204,8 +207,8 @@ mdl-layout--fixed-tabs">
                                 </div>
                                 <h5>Periodo de h(n)</h5>
                                 <div class="mdl-textfield mdl-js-textfield">
-                                    <input class="mdl-textfield__input" type="text" id="periodoYnCircular">
-                                    <label class="mdl-textfield__label" for="periodoXnCircular">Peri&oacute;do de
+                                    <input class="mdl-textfield__input" type="text" id="periodoHnCircular">
+                                    <label class="mdl-textfield__label" for="periodoHnCircular">Peri&oacute;do de
                                         h(n)</label>
                                 </div>
 
@@ -215,7 +218,7 @@ mdl-layout--fixed-tabs">
                     <!-- Your content goes here -->
                     <div style="text-align: center;">
                         <button id="btnConvCircular"
-                            class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
+                            class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" onclick="calculateCircular()">
                             Continuar
                         </button>
                     </div>
@@ -225,7 +228,7 @@ mdl-layout--fixed-tabs">
             <section class="mdl-layout__tab-panel" id="tabGraficas">
                 <div style="text-align: center; width: 800px; margin: auto;">
                     <div class="page-content">
-                        <div id="resultado"></div>
+                        <h4><div id="resultado"></div></h4>
                         <h5>x(n)</h5>
                         <div id="xnGraph"></div>
                         <h5>h(n)</h5>
