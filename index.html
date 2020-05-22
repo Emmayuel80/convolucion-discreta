@@ -4,82 +4,208 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pr&aacute;ctica 2</title>
+    <title>Convoluci&oacute;n discreta</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
     <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
 </head>
 
 <body>
-    <!-- Always shows a header, even in smaller screens. -->
-    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    <!-- Simple header with fixed tabs. -->
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header
+mdl-layout--fixed-tabs">
         <header class="mdl-layout__header">
             <div class="mdl-layout__header-row">
                 <!-- Title -->
                 <span class="mdl-layout-title">Pr&aacute;ctica 2: Convoluci&oacute;n discreta</span>
-                <!-- Add spacer, to align navigation to the right -->
-                <div class="mdl-layout-spacer"></div>
-                <!-- Navigation. We hide it in small screens. -->
+            </div>
+            <!-- Tabs -->
+            <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
+                <a href="#tabConvInfinita" class="mdl-layout__tab is-active">Convoluci&oacute;n finita</a>
+                <a href="#tabConvPeriodica" class="mdl-layout__tab">Convoluci&oacute;n peri&oacute;dica</a>
+                <a href="#tabConvCircular" class="mdl-layout__tab">Convoluci&oacute;n circular</a>
+                <a href="#tabGraficas" class="mdl-layout__tab">Gr&aacute;fica</a>
             </div>
         </header>
+
         <main class="mdl-layout__content">
-            <div class="page-content">
-                <div class="mdl-grid">
-                    <div class="mdl-cell mdl-cell--6-col">
-                        <div style="text-align: center;" id="datosXn">
-                            <h5>Inserte x(n)</h5>
-                            <!-- Floating Multiline Textfield -->
-                            <form action="#">
-                                <div class="mdl-textfield mdl-js-textfield">
-                                    <textarea class="mdl-textfield__input" type="text" rows="3" id="sample5"></textarea>
-                                    <label class="mdl-textfield__label" for="sample5">Text lines...</label>
-                                </div>
-                            </form>
+            <section class="mdl-layout__tab-panel is-active" id="tabConvInfinita">
+                <div class="page-content">
+                    <div id="divContent" style="text-align: center;">
+                        <div class="mdl-grid">
+                            <div class="mdl-cell mdl-cell--6-col">
+                                <div style="text-align: center;" id="datosXnFinita">
+                                    <h5>Inserte x(n)</h5>
+                                    <!-- Floating Multiline Textfield -->
+                                    <div class="mdl-textfield mdl-js-textfield">
+                                        <textarea class="mdl-textfield__input" type="text" rows="3"
+                                            id="textSecuenciaXnFinita"></textarea>
+                                        <label class="mdl-textfield__label" for="textSecuenciaXnFinita">Ejemplo: 1,2,3,4,5</label>
+                                    </div>
 
-                            <h5>Indique desde que "n" comienza la secuencia x(n)</h5>
-                            <form action="#">
-                                <div class="mdl-textfield mdl-js-textfield">
-                                    <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?"
-                                        id="sample2">
-                                    <label class="mdl-textfield__label" for="sample2">Number...</label>
-                                    <span class="mdl-textfield__error">Input is not a number!</span>
+                                    <h5>Indique desde que "n" comienza la secuencia x(n)</h5>
+                                    <div class="mdl-textfield mdl-js-textfield">
+                                        <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?"
+                                            id="indiceXnFinita">
+                                        <label class="mdl-textfield__label" for="indiceXn">Number...</label>
+                                        <span class="mdl-textfield__error">Entrada no v&aacute;lida!</span>
+                                    </div>
                                 </div>
-                            </form>
-                        </div>
-                    </div>
-                    <div class="mdl-cell mdl-cell--6-col">
-                        <div style="text-align: center;" id="datosHn">
-                            <h5>Inserte h(n)</h5>
-                            <!-- Floating Multiline Textfield -->
-                            <form action="#">
-                                <div class="mdl-textfield mdl-js-textfield">
-                                    <textarea class="mdl-textfield__input" type="text" rows="3" id="sample5"></textarea>
-                                    <label class="mdl-textfield__label" for="sample5">Text lines...</label>
-                                </div>
-                            </form>
+                            </div>
+                            <div class="mdl-cell mdl-cell--6-col">
+                                <div style="text-align: center;" id="datosHnFinita">
+                                    <h5>Inserte h(n)</h5>
+                                    <!-- Floating Multiline Textfield -->
+                                    <div class="mdl-textfield mdl-js-textfield">
+                                        <textarea class="mdl-textfield__input" type="text" rows="3"
+                                            id="textSecuenciaHnFinita"></textarea>
+                                        <label class="mdl-textfield__label" for="textSecuenciaHnFinita">Ejemplo: 1,2,3,4,5</label>
+                                    </div>
 
-                            <h5>Indique desde que "n" comienza la secuencia h(n)</h5>
-                            <form action="#">
-                                <div class="mdl-textfield mdl-js-textfield">
-                                    <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?"
-                                        id="sample2">
-                                    <label class="mdl-textfield__label" for="sample2">Number...</label>
-                                    <span class="mdl-textfield__error">Input is not a number!</span>
+                                    <h5>Indique desde que "n" comienza la secuencia h(n)</h5>
+                                    <div class="mdl-textfield mdl-js-textfield">
+                                        <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?"
+                                            id="indiceHnFinita">
+                                        <label class="mdl-textfield__label" for="indiceHnFinita">Number...</label>
+                                        <span class="mdl-textfield__error">Entrada no v&aacute;lida!</span>
+                                    </div>
                                 </div>
-                            </form>
+                            </div>
                         </div>
+                        <!-- Accent-colored raised button -->
+                        <button id="btnConvFinita"
+                            class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
+                            Continuar
+                        </button>
                     </div>
                 </div>
-                <div id="divBoton" style="text-align: center;">
-                    <!-- Accent-colored raised button -->
-                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
-                        Continuar
-                    </button>
-                </div>
+            </section>
+            <section class="mdl-layout__tab-panel" id="tabConvPeriodica">
+                <div class="page-content">
+                    <div class="mdl-grid">
+                        <div class="mdl-cell mdl-cell--6-col">
+                            <div style="text-align: center;" id="datosXnPeriodica">
+                                <h5>Inserte x(n)</h5>
+                                <!-- Floating Multiline Textfield -->
 
-            </div>
+                                <div class="mdl-textfield mdl-js-textfield">
+                                    <textarea class="mdl-textfield__input" type="text" rows="3"
+                                        id="textSecuenciaXnPeriodica"></textarea>
+                                    <label class="mdl-textfield__label" for="textSecuenciaXnPeriodica">Ejemplo: 1,2,3,4,5</label>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="mdl-cell mdl-cell--6-col">
+                            <div style="text-align: center;" id="datosHnPeriodica">
+                                <h5>Inserte h(n) peri&oacute;dica</h5>
+                                <!-- Floating Multiline Textfield -->
+
+                                <div class="mdl-textfield mdl-js-textfield">
+                                    <textarea class="mdl-textfield__input" type="text" rows="3"
+                                        id="textSecuenciaHnPeriodica"></textarea>
+                                    <label class="mdl-textfield__label" for="textSecuenciaHnPeriodica">Ejemplo: 1,2,3,4,5</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="divCentrado" style="text-align: center;">
+                        <h5>Indique desde que "n" comienza la secuencia h(n)</h5>
+
+                        <div class="mdl-textfield mdl-js-textfield">
+                            <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?"
+                                id="indiceHnPeriodica">
+                            <label class="mdl-textfield__label" for="indiceHnPeriodica">Number...</label>
+                            <span class="mdl-textfield__error">Input is not a number!</span>
+                        </div>
+                        <br>
+                        <!-- Accent-colored raised button -->
+                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
+                            Continuar
+                        </button>
+                    </div>
+                </div>
+            </section>
+            <section class="mdl-layout__tab-panel" id="tabConvCircular">
+                <div class="page-content">
+                    <div class="mdl-grid">
+                        <div class="mdl-cell mdl-cell--6-col">
+                            <div style="text-align: center;" id="datosXnCircular">
+                                <h5>Inserte x(n)</h5>
+                                <!-- Floating Multiline Textfield -->
+
+                                <div class="mdl-textfield mdl-js-textfield">
+                                    <textarea class="mdl-textfield__input" type="text" rows="3"
+                                        id="textSecuenciaXnCircular"></textarea>
+                                    <label class="mdl-textfield__label" for="textSecuenciaXnCircular">Ejemplo: 1,2,3,4,5</label>
+                                </div>
+
+
+                                <h5>Indique desde que "n" comienza la secuencia x(n)</h5>
+
+                                <div class="mdl-textfield mdl-js-textfield">
+                                    <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?"
+                                        id="indiceXnCircular">
+                                    <label class="mdl-textfield__label" for="indiceXnCircular">Number...</label>
+                                    <span class="mdl-textfield__error">Input is not a number!</span>
+                                </div>
+                                <h5>Periodo de x(n)</h5>
+                                <div class="mdl-textfield mdl-js-textfield">
+                                    <input class="mdl-textfield__input" type="text" id="periodoXnCircular">
+                                    <label class="mdl-textfield__label" for="periodoXnCircular">Peri&oacute;do de
+                                        x(n)</label>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="mdl-cell mdl-cell--6-col">
+                            <div style="text-align: center;" id="datosHnCircular">
+                                <h5>Inserte h(n)</h5>
+                                <!-- Floating Multiline Textfield -->
+
+                                <div class="mdl-textfield mdl-js-textfield">
+                                    <textarea class="mdl-textfield__input" type="text" rows="3"
+                                        id="textSecuenciaHnCircular"></textarea>
+                                    <label class="mdl-textfield__label" for="textSecuenciaHnCircular">Ejemplo: 1,2,3,4,5</label>
+                                </div>
+
+
+                                <h5>Indique desde que "n" comienza la secuencia h(n)</h5>
+
+                                <div class="mdl-textfield mdl-js-textfield">
+                                    <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?"
+                                        id="indiceHnCircular">
+                                    <label class="mdl-textfield__label" for="indiceHnCircular">Number...</label>
+                                    <span class="mdl-textfield__error">Input is not a number!</span>
+                                </div>
+                                <h5>Periodo de h(n)</h5>
+                                <div class="mdl-textfield mdl-js-textfield">
+                                    <input class="mdl-textfield__input" type="text" id="periodoYnCircular">
+                                    <label class="mdl-textfield__label" for="periodoXnCircular">Peri&oacute;do de
+                                        h(n)</label>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Your content goes here -->
+                    <div style="text-align: center;">
+                        <button id="btnConvFinita"
+                            class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
+                            Continuar
+                        </button>
+                    </div>
+
+                </div>
+            </section>
+            <section class="mdl-layout__tab-panel" id="tabGraficas">
+                <div class="page-content">
+                    <!-- Your content goes here -->
+                </div>
+            </section>
         </main>
     </div>
+
 </body>
 
 </html>
